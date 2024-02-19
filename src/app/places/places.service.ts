@@ -25,12 +25,17 @@ export class PlacesService {
         'Ibis Hotel',
         'https://www.feelporto.com/blog/wp-content/uploads/2021/07/28_visitar-Porto.jpg',
         25.00)
-    
   ];
 
   constructor() { }
 
   getPlaces() {
     return [...this._places];
+  }
+
+  getPlace(id: string) {
+    return this._places.find(
+      p => p.id === id
+    )
   }
 }

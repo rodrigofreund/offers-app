@@ -1,3 +1,42 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu content-id="main">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>
+          PairBnB
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/places/tabs/discover">
+            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-label>Discover Places</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-item lines="none">
+          <ion-icon name="checkbox-outline" slot="start"></ion-icon>
+          <ion-label>Your Bookings</ion-label>
+        </ion-item>
+        <ion-item lines="none" (click) ="onLogout()" button>
+          <ion-icon name="exit" slot="start"></ion-icon>
+          <ion-label>Logout</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
+
+<style>
+  ion-menu::part(backdrop) {
+    background-color: rgba(91, 184, 212, 0.795);
+  }
+
+  ion-menu::part(container) {
+    border-radius: 0 20px 20px 0;
+
+    box-shadow: 4px 0px 16px rgba(0, 153, 255, 0.18);
+  }
+</style>
